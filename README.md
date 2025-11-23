@@ -109,6 +109,13 @@ npm start
 
 **Dokumentasi**
 
-Setel Environment Variable REACT_APP_API_URL di hosting Anda menjadi URL backend yang baru (https://my-backend-url.com).
+<img width="1909" height="963" alt="image" src="https://github.com/user-attachments/assets/230b50d3-a242-4ff0-b948-5af7b05a1cd2" />
 
-Sistem akan otomatis mendeteksi project React dan melakukan build.
+
+<img width="1907" height="963" alt="image" src="https://github.com/user-attachments/assets/5199a179-5a92-484c-8e8f-df05dd1a7cbc" />
+
+
+<img width="1913" height="962" alt="image" src="https://github.com/user-attachments/assets/5732da2c-09f2-4688-947f-18761eea773f" />
+
+
+
