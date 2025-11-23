@@ -1,0 +1,394 @@
+/* --- VARIABEL TEMA (DEFAULT / LIGHT MODE) --- */
+:root {
+  /* Warna Identitas (Navy & Gold) */
+  --primary: #172a45; /* Navy Blue (Warna Utama Aplikasi & Tombol Login) */
+  --accent: #ffc107; /* Gold/Emas (Dashboard Highlight/Progress) */
+  --auth-link-color: #4e54c8; /* Purple-Blue (KHUSUS Logo/Link AuthPage) */
+  --danger: #ef4444;
+  --white: #ffffff;
+
+  /* Warna Background & Teks */
+  --bg-body: #f4f7f6;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --text-main: #333333;
+  --text-soft: #64748b;
+  --border-color: #e2e8f0;
+  
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* --- LAYOUT UTAMA --- */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* --- NAVBAR --- */
+.dashboard-nav {
+  background-color: var(--white);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-title {
+  margin: 0;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-user {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.btn-theme {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--white);
+  transition: 0.2s;
+}
+
+.btn-logout {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.btn-theme:hover, .btn-logout:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* --- HEADER PROGRESS --- */
+.progress-card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.progress-title {
+  margin: 0;
+  font-size: 24px;
+  color: var(--primary); 
+}
+
+.progress-percent {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+}
+
+/* --- GRID LAYOUT --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* --- BUTTON TAMBAH TUGAS (NAVIGASI) --- */
+.btn-add-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: 0.3s;
+}
+
+.btn-add-task:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.plus-icon {
+  /* Hanya mewarnai ikon yang sudah dipanggil dari Lucide */
+  color: var(--accent); 
+  font-size: 20px;
+  font-weight: bold;
+  display: flex; /* Tambahkan ini agar ikon sejajar */
+  align-items: center;
+}
+
+/* --- SEARCH INPUT --- */
+.search-input {
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+  outline: none;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+}
+
+/* --- LIST TUGAS --- */
+.section-title {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px dashed var(--border-color);
+  color: var(--text-soft);
+}
+
+.task-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden; 
+  margin-bottom: 20px;
+}
+
+/* --- COVER IMAGE STYLE --- */
+.task-cover {
+  width: 100%;
+  height: 20px; /* Tinggi cover image */
+  overflow: hidden;
+  background-color: var(--primary); /* Fallback BG */
+  position: relative; /* Penting untuk positioning badge */
+}
+
+.cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pastikan gambar mengisi area tanpa terdistorsi */
+  display: block;
+}
+/* --- END COVER IMAGE STYLE --- */
+
+.task-body {
+  padding: 20px; /* Padding dipindahkan ke body tugas */
+}
+
+.task-card.completed {
+  opacity: 0.7;
+}
+
+.task-detail-header {
+    /* Header mata kuliah dan judul */
+    margin-bottom: 10px;
+    display: flex; /* Tambahkan display flex */
+    justify-content: space-between; /* Untuk memisahkan tag mata kuliah dan prioritas */
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.task-tag {
+  /* MENGECILKAN UKURAN FONT MATA KULIAH */
+  font-size: 12px; 
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  letter-spacing: 0.5px;
+  /* Hapus display: block; */
+  margin-bottom: 5px;
+}
+
+.priority-badge {
+  /* Style Prioritas di Body */
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* Hapus properti color/background yang digunakan untuk cover */
+  color: var(--text-main); 
+  background: var(--bg-body);
+}
+
+.task-title {
+  margin: 0; /* Menghapus margin atas/bawah */
+  font-size: 18px;
+  color: var(--primary);
+  text-decoration: none;
+  /* Agar judul menempati baris baru setelah mata kuliah dan prioritas */
+  width: 100%; 
+  margin-top: 5px; 
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+}
+
+.task-desc {
+  font-size: 14px;
+  color: var(--text-soft);
+  margin-bottom: 15px;
+  line-height: 1.5;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-attachment-display {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: var(--bg-body);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    border: 1px dashed var(--border-color);
+}
+.task-attachment-display img {
+    width: 100%; 
+}
+.task-attachment-display .attachment-link {
+    display: flex;
+    align-items: center;
+}
+
+
+.task-footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  transition: 0.2s;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main); 
+}
+
+.btn-icon:hover {
+  background: var(--bg-body);
+}
+
+/* Helper Classes untuk Warna Dinamis (Status/Prioritas) */
+/* Prioritas */
+.prio-high { color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+.prio-medium { color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+.prio-low { color: #10b981; background: rgba(16, 185, 129, 0.1); }
+
+/* Status Deadline */
+.status-done { color: #10b981; background: #d1fae5; }
+.status-late { color: #ef4444; background: #fee2e2; }
+.status-today { color: #f59e0b; background: #fef3c7; }
+.status-ok { color: #3b82f6; background: #dbeafe; }

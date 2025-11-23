@@ -1,0 +1,193 @@
+/* Reset & Font Modern */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary: #172a45; /* Biru Modern */
+  --primary-hover: #3f44a5;
+  --bg-light: #ffffff;
+  --bg-grey: #f8f9fd;
+  --text-dark: #333;
+  --text-grey: #888;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: var(--bg-light);
+}
+
+/* --- NAVBAR MODERN --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9); /* Efek kaca */
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: var(--text-grey);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* --- LAYOUT UTAMA (SPLIT SCREEN) --- */
+.auth-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* KIRI: FORM SECTION */
+.auth-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+  background: white;
+  animation: slideInLeft 0.8s ease;
+}
+
+.auth-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.sub-text {
+  color: var(--text-grey);
+  margin-bottom: 30px;
+}
+
+/* FORM STYLING */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-grey);
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+  box-sizing: border-box; /* Agar padding tidak merusak lebar */
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(78, 84, 200, 0.1);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: var(--text-grey);
+}
+
+.forgot-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(78, 84, 200, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.toggle-text {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-grey);
+}
+
+.toggle-link {
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* KANAN: GAMBAR SECTION */
+.auth-right {
+  width: 50%;
+  background-color: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-image {
+  width: 80%;
+  max-width: 500px;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ANIMASI BIAR TIDAK KAKU */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* RESPONSIVE (HP) */
+@media (max-width: 768px) {
+  .auth-right { display: none; } /* Sembunyikan gambar di HP */
+  .auth-left { width: 100%; padding: 20px; }
+  .navbar { padding: 15px 20px; }
+  .nav-links { display: none; } /* Sembunyikan menu di HP biar simpel */
+}
